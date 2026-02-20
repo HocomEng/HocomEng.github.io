@@ -7,27 +7,39 @@
   <meta name="description" content="Hossein Safi — telecoms specialist and consultant (TMT). Strategy, regulatory, and market analysis across mobile, IoT, non-terrestrial networks, and digital infrastructure." />
 
   <style>
+    /* 1. Added Google Fonts for a more premium typography feel */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
     :root{
       --bg: #0b1220;
       --panel: rgba(17, 24, 39, 0.72);
       --panel2: rgba(2, 6, 23, 0.42);
-      --text: #e5e7eb;
-      --muted: #9ca3af;
+      /* Softened the text colors slightly for better contrast on dark modes */
+      --text: #f3f4f6; 
+      --muted: #cbd5e1;
       --accent: #38bdf8;
       --border: rgba(148, 163, 184, 0.18);
       --shadow: 0 12px 30px rgba(0,0,0,0.35);
       --radius: 16px;
     }
 
-    *{ box-sizing:border-box; margin:0; padding:0; font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; }
+    /* Apply the new Inter font globally */
+    *{ box-sizing:border-box; margin:0; padding:0; font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+    
+    /* 2. Added smooth scrolling for anchor links */
+    html { scroll-behavior: smooth; }
+
     body{
       color: var(--text);
       background:
         radial-gradient(1200px 520px at 18% -10%, rgba(56,189,248,0.18), transparent 60%),
         radial-gradient(1000px 620px at 100% 10%, rgba(99,102,241,0.18), transparent 55%),
         linear-gradient(180deg, #020617, var(--bg));
-      line-height: 1.6;
+      line-height: 1.7; /* Increased line height for breathability */
     }
+
+    /* 3. Added smooth transitions for interactive elements */
+    a, .btn, .card { transition: all 0.2s ease-in-out; }
 
     a{ color: var(--accent); text-decoration: none; }
     a:hover{ text-decoration: underline; }
@@ -87,6 +99,7 @@
       object-fit: contain;
       background: #020617;
       border: 1px solid var(--border);
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.15); /* Subtle glow */
     }
 
     h1{
@@ -94,6 +107,7 @@
       letter-spacing: -0.02em;
       line-height: 1.15;
       margin-bottom: 6px;
+      font-weight: 700;
     }
     .title{
       color: var(--muted);
@@ -113,12 +127,12 @@
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       gap: 8px;
-      padding: 10px 12px;
+      padding: 10px 14px;
       border-radius: 12px;
       border: 1px solid var(--border);
       background: rgba(2,6,23,0.35);
       color: var(--text);
-      font-weight: 650;
+      font-weight: 600;
       font-size: 0.95rem;
       text-decoration: none;
     }
@@ -126,7 +140,11 @@
       background: rgba(56,189,248,0.14);
       border-color: rgba(56,189,248,0.35);
     }
-    .btn:hover{ border-color: rgba(56,189,248,0.65); }
+    .btn:hover{ 
+      border-color: rgba(56,189,248,0.65); 
+      background: rgba(56,189,248,0.1);
+      transform: translateY(-1px);
+    }
 
     section{
       margin-top: 18px;
@@ -150,6 +168,7 @@
     h2{
       font-size: 1.15rem;
       letter-spacing: -0.01em;
+      font-weight: 600;
     }
 
     .subtle{ color: var(--muted); font-size: 0.92rem; }
@@ -164,12 +183,20 @@
       background: var(--panel2);
       border: 1px solid var(--border);
       border-radius: 14px;
-      padding: 14px 14px 16px;
+      padding: 16px;
+    }
+    /* 4. Added micro-interactions to cards */
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(56, 189, 248, 0.4);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     }
     .card h3{
       font-size: 0.98rem;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
       letter-spacing: -0.01em;
+      font-weight: 600;
+      color: var(--text);
     }
     .card p, .card li{
       color: var(--muted);
@@ -206,7 +233,7 @@
       margin-bottom: 8px;
     }
     .roleTop .left{ display:flex; flex-direction:column; gap: 2px; }
-    .roleTop .left strong{ font-size: 1rem; }
+    .roleTop .left strong{ font-size: 1rem; color: var(--text); }
     .roleTop .left span{ color: var(--muted); font-size: 0.92rem; }
     .roleTop .right{ color: var(--muted); font-size: 0.92rem; white-space: nowrap; }
 
@@ -238,7 +265,7 @@
 
     .email-text{
       color: var(--accent);
-      font-weight: 650;
+      font-weight: 600;
     }
   </style>
 </head>
@@ -278,10 +305,22 @@
         </div>
 
         <div class="ctaRow">
-          <a class="btn primary" href="mailto:safi.hossein01@gmail.com">Email</a>
-          <a class="btn" href="https://www.linkedin.com/in/hossein-safi-66674680/" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="btn" href="https://scholar.google.com/citations?user=G-j2JCAAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
-          <a class="btn" href="#calendar">Book 30 minute meeting</a>
+          <a class="btn primary" href="mailto:safi.hossein01@gmail.com">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            Email
+          </a>
+          <a class="btn" href="https://www.linkedin.com/in/hossein-safi-66674680/" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+          <a class="btn" href="https://scholar.google.com/citations?user=G-j2JCAAAAAJ&hl=en" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            Google Scholar
+          </a>
+          <a class="btn" href="#calendar">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+            Book 30 minute meeting
+          </a>
         </div>
 
         <div class="kpiRow">
@@ -389,7 +428,7 @@
       </div>
 
       <div class="timeline">
-        <!-- Experience content as previously provided -->
+        <p class="subtle">Add your experience roles here using the .role class format.</p>
       </div>
     </section>
 
@@ -437,6 +476,7 @@
           </p>
           <p style="margin-top:12px;">
             <a class="btn primary" href="https://calendar.app.google/G5mBLu5Wmue2BrTTA" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
               Open booking page
             </a>
           </p>
