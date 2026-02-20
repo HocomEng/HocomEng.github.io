@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name | Personal Website</title>
+  <meta name="description" content="Personal website of Your Name. Research, projects, and contact information." />
+
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #38bdf8;
+      --border: #1f2933;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(180deg, #020617 0%, #020617 30%, #020617 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 48px 20px 80px;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 24px;
+      align-items: center;
+      margin-bottom: 48px;
+    }
+
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 1px solid var(--border);
+      background: #020617;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .links a {
+      display: inline-block;
+      margin-right: 14px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      background: rgba(17, 24, 39, 0.6);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px 24px 28px;
+      margin-bottom: 24px;
+      backdrop-filter: blur(6px);
+    }
+
+    section h2 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .item {
+      background: #020617;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+
+    .item h3 {
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .item p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 640px) {
+      header {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .avatar {
+        margin: 0 auto 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img class="avatar" src="photo.jpg" alt="Your Name" />
+      <div>
+        <h1>Your Name</h1>
+        <p class="subtitle">Your role or short professional description</p>
+        <div class="links">
+          <a href="mailto:youremail@example.com">Email</a>
+          <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener">X</a>
+          <a href="https://scholar.google.com" target="_blank" rel="noopener">Google Scholar</a>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <h2>About</h2>
+      <p>
+        Write a concise professional bio here. Briefly describe your background,
+        current role, and main interests. Keep this to 3 to 5 lines for clarity.
+      </p>
+    </section>
+
+    <section>
+      <h2>Projects or Work</h2>
+      <div class="grid">
+        <div class="item">
+          <h3>Project Title</h3>
+          <p>One sentence description of the project or outcome.</p>
+        </div>
+        <div class="item">
+          <h3>Project Title</h3>
+          <p>One sentence description of the project or outcome.</p>
+        </div>
+        <div class="item">
+          <h3>Project Title</h3>
+          <p>One sentence description of the project or outcome.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Publications or Writing</h2>
+      <div class="grid">
+        <div class="item">
+          <h3>Paper or Article Title</h3>
+          <p>Journal or platform, year. Short context or link.</p>
+        </div>
+        <div class="item">
+          <h3>Paper or Article Title</h3>
+          <p>Journal or platform, year. Short context or link.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>
+        Email: youremail@example.com <br />
+        Location: City, Country
+      </p>
+    </section>
+
+    <footer>
+      © 2026 Your Name. Hosted on GitHub Pages.
+    </footer>
+  </div>
+</body>
+</html>
