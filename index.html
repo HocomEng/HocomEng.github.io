@@ -7,14 +7,13 @@
   <meta name="description" content="Hossein Safi — telecoms specialist and consultant (TMT). Strategy, regulatory, and market analysis across mobile, IoT, non-terrestrial networks, and digital infrastructure." />
 
   <style>
-    /* 1. Added Google Fonts for a more premium typography feel */
+    /* Premium typography */
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
     :root{
       --bg: #0b1220;
       --panel: rgba(17, 24, 39, 0.72);
       --panel2: rgba(2, 6, 23, 0.42);
-      /* Softened the text colors slightly for better contrast on dark modes */
       --text: #f3f4f6; 
       --muted: #cbd5e1;
       --accent: #38bdf8;
@@ -23,10 +22,9 @@
       --radius: 16px;
     }
 
-    /* Apply the new Inter font globally */
     *{ box-sizing:border-box; margin:0; padding:0; font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
     
-    /* 2. Added smooth scrolling for anchor links */
+    /* Smooth scrolling for anchor links */
     html { scroll-behavior: smooth; }
 
     body{
@@ -35,48 +33,62 @@
         radial-gradient(1200px 520px at 18% -10%, rgba(56,189,248,0.18), transparent 60%),
         radial-gradient(1000px 620px at 100% 10%, rgba(99,102,241,0.18), transparent 55%),
         linear-gradient(180deg, #020617, var(--bg));
-      line-height: 1.7; /* Increased line height for breathability */
+      line-height: 1.7; 
     }
 
-    /* 3. Added smooth transitions for interactive elements */
+    /* Smooth transitions */
     a, .btn, .card { transition: all 0.2s ease-in-out; }
 
     a{ color: var(--accent); text-decoration: none; }
     a:hover{ text-decoration: underline; }
 
-    .container{ max-width: 1100px; margin: 0 auto; padding: 44px 18px 78px; }
+    .container{ max-width: 1100px; margin: 0 auto; padding: 24px 18px 78px; }
 
-    .topbar{
-      display:flex; align-items:center; justify-content:space-between; gap:14px;
-      padding: 10px 12px;
+    /* --- NEW SYMMETRICAL & STICKY TOPBAR --- */
+    .topbar {
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between; 
+      gap: 16px;
+      padding: 16px 24px;
       border: 1px solid var(--border);
-      border-radius: 999px;
-      background: rgba(2,6,23,0.35);
-      backdrop-filter: blur(10px);
-      margin-bottom: 22px;
+      border-radius: var(--radius);
+      background: var(--panel);
+      backdrop-filter: blur(12px);
+      margin-bottom: 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      /* Makes the navigation sticky */
+      position: sticky;
+      top: 16px;
+      z-index: 100;
     }
-    .topbar .pill{
-      display:flex; gap:10px; align-items:center;
-      color: var(--muted);
-      font-size: 0.92rem;
-      padding-left: 6px;
-      flex-wrap: wrap;
-    }
-    .dot{ width:6px; height:6px; border-radius:50%; background: rgba(56,189,248,0.9); display:inline-block; }
 
-    .topbar .nav{
-      display:flex; flex-wrap:wrap; gap: 10px; justify-content:flex-end;
-    }
-    .topbar .nav a{
+    .topbar .brand {
+      font-weight: 700;
       color: var(--text);
-      border: 1px solid var(--border);
-      background: rgba(15,23,42,0.65);
-      padding: 7px 10px;
-      border-radius: 999px;
-      font-size: 0.9rem;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+    }
+
+    .topbar .nav {
+      display: flex; 
+      flex-wrap: wrap; 
+      gap: 20px; 
+      justify-content: flex-end;
+    }
+
+    .topbar .nav a {
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 500;
       text-decoration: none;
     }
-    .topbar .nav a:hover{ border-color: rgba(56,189,248,0.55); }
+
+    .topbar .nav a:hover { 
+      color: var(--accent); 
+    }
+    /* --------------------------------------- */
 
     header.hero{
       display:grid;
@@ -99,7 +111,7 @@
       object-fit: contain;
       background: #020617;
       border: 1px solid var(--border);
-      box-shadow: 0 0 25px rgba(56, 189, 248, 0.15); /* Subtle glow */
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.15);
     }
 
     h1{
@@ -122,6 +134,7 @@
       margin-bottom: 14px;
     }
     .meta span{ display:inline-flex; align-items:center; gap:8px; }
+    .dot{ width:6px; height:6px; border-radius:50%; background: rgba(56,189,248,0.9); display:inline-block; }
 
     .ctaRow{ display:flex; flex-wrap:wrap; gap: 10px; margin-top: 6px; }
     .btn{
@@ -154,6 +167,7 @@
       background: var(--panel);
       box-shadow: 0 10px 24px rgba(0,0,0,0.28);
       backdrop-filter: blur(10px);
+      scroll-margin-top: 100px; /* Ensures sticky header doesn't overlap section titles */
     }
 
     .sectionHeader{
@@ -185,12 +199,13 @@
       border-radius: 14px;
       padding: 16px;
     }
-    /* 4. Added micro-interactions to cards */
+    
     .card:hover {
       transform: translateY(-3px);
       border-color: rgba(56, 189, 248, 0.4);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     }
+    
     .card h3{
       font-size: 0.98rem;
       margin-bottom: 8px;
@@ -259,8 +274,10 @@
       header.hero{ grid-template-columns: 1fr; text-align:center; }
       .avatar{ margin: 0 auto; }
       .meta, .ctaRow{ justify-content:center; }
-      .topbar{ flex-direction:column; align-items:stretch; border-radius: 18px; }
-      .topbar .nav, .topbar .pill{ justify-content:center; }
+      
+      /* New mobile topbar rules */
+      .topbar{ flex-direction: column; text-align: center; gap: 12px; border-radius: 18px; }
+      .topbar .nav { justify-content: center; gap: 14px; }
     }
 
     .email-text{
@@ -274,14 +291,7 @@
   <div class="container">
 
     <div class="topbar">
-      <div class="pill">
-        <span class="dot"></span>
-        <span>Telecoms Strategy</span>
-        <span class="dot"></span>
-        <span>Regulatory and Policy Advisory</span>
-        <span class="dot"></span>
-        <span>Techno-economics</span>
-      </div>
+      <div class="brand">Hossein Safi</div>
       <div class="nav">
         <a href="#about">About</a>
         <a href="#services">Services</a>
