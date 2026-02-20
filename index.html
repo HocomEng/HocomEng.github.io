@@ -44,7 +44,7 @@
 
     .container{ max-width: 1100px; margin: 0 auto; padding: 24px 18px 78px; }
 
-    /* --- NEW SYMMETRICAL & STICKY TOPBAR --- */
+    /* --- STICKY SYMMETRICAL TOPBAR --- */
     .topbar {
       display: flex; 
       align-items: center; 
@@ -57,7 +57,6 @@
       backdrop-filter: blur(12px);
       margin-bottom: 24px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-      /* Makes the navigation sticky */
       position: sticky;
       top: 16px;
       z-index: 100;
@@ -88,7 +87,6 @@
     .topbar .nav a:hover { 
       color: var(--accent); 
     }
-    /* --------------------------------------- */
 
     header.hero{
       display:grid;
@@ -105,8 +103,8 @@
     }
 
     .avatar{
-      width: 160px;
-      height: 160px;
+      width: 162px;
+      height: 162px;
       border-radius: 16px;
       object-fit: contain;
       background: #020617;
@@ -167,7 +165,7 @@
       background: var(--panel);
       box-shadow: 0 10px 24px rgba(0,0,0,0.28);
       backdrop-filter: blur(10px);
-      scroll-margin-top: 100px; /* Ensures sticky header doesn't overlap section titles */
+      scroll-margin-top: 100px;
     }
 
     .sectionHeader{
@@ -274,8 +272,6 @@
       header.hero{ grid-template-columns: 1fr; text-align:center; }
       .avatar{ margin: 0 auto; }
       .meta, .ctaRow{ justify-content:center; }
-      
-      /* New mobile topbar rules */
       .topbar{ flex-direction: column; text-align: center; gap: 12px; border-radius: 18px; }
       .topbar .nav { justify-content: center; gap: 14px; }
     }
@@ -311,7 +307,7 @@
 
         <div class="meta">
           <span><span class="dot"></span> Cambridge, UK</span>
-          <span><span class="dot"></span> UK Global Talent awardee (no sponsorship required)</span>
+          <span><span class="dot"></span> UK Global Talent awardee</span>
         </div>
 
         <div class="ctaRow">
@@ -329,7 +325,7 @@
           </a>
           <a class="btn" href="#calendar">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
-            Book 30 minute meeting
+            Book a 30-minute meeting
           </a>
         </div>
 
@@ -353,7 +349,7 @@
         combining strong quantitative analysis with executive-level communication.
       </p>
       <p style="margin-top:10px;">
-        PhD in Telecommunications Engineering. Focus areas include mobile networks (2G to 6G), IoT ecosystems and regulation, non-terrestrial and satellite communications, and techno-economic modelling.
+        PhD in Telecommunications Engineering. Focus areas include mobile networks (2G to 6G), non-terrestrial and satellite communications, IoT ecosystems and regulation, and techno-economic modelling.
       </p>
     </section>
 
@@ -438,7 +434,80 @@
       </div>
 
       <div class="timeline">
-        <p class="subtle">Add your experience roles here using the .role class format.</p>
+        
+        <div class="role">
+          <div class="roleTop">
+            <div class="left">
+              <strong>Post-Doctoral Research Associate</strong>
+              <span>University of Cambridge </span>
+            </div>
+            <div class="right">Apr. 2024 – Present </div>
+          </div>
+          <ul style="color: var(--muted); font-size: 0.93rem; margin-top: 8px;">
+           <li>Delivered technical and economic assessments of emerging non-terrestrial and satellite-based connectivity solutions.</li>
+            <li>Developed end-to-end link budget, performance, and cost models to inform feasibility and deployment trade-offs.</li>
+            <li>Produced stakeholder-facing reports on service differentiation strategies for next-generation connectivity.</li>
+          </ul>
+        </div>
+
+        <div class="role">
+          <div class="roleTop">
+            <div class="left">
+              <strong>Post-Doctoral Research Associate</strong>
+              <span>University of Strathclyde </span>
+            </div>
+            <div class="right">Oct. 2023 – Mar. 2024 </div>
+          </div>
+          <ul style="color: var(--muted); font-size: 0.93rem; margin-top: 8px;">
+            <li>Contributed to the REASON UK 6G flagship programme, supporting multi-access connectivity frameworks.</li>
+            <li>Developed system-level architectures and analytical models to assess advanced wireless technologies.</li>
+            <li>Aligned technical development with deployment, standardisation, and regulatory considerations alongside an industry-academic consortium.</li>
+          </ul>
+        </div>
+
+        <div class="role">
+          <div class="roleTop">
+            <div class="left">
+              <strong>Technical Ecosystem Lead</strong>
+              <span>IoT Innovation Centre </span>
+            </div>
+            <div class="right">Jul. 2021 – Apr. 2023 </div>
+          </div>
+          <ul style="color: var(--muted); font-size: 0.93rem; margin-top: 8px;">
+            <li>Led consulting engagements analysing the national IoT ecosystem, market structure, and competitive dynamics.</li>
+            <li>Delivered market segmentation and growth forecasting to inform licensing, policy, and investment decisions.</li>
+            <li>Secured $400K in funding to launch a nationwide IoT competition by developing the business case and aligning stakeholders.</li>
+          </ul>
+        </div>
+
+        <div class="role">
+          <div class="roleTop">
+            <div class="left">
+              <strong>Senior Analyst</strong>
+              <span>Teyf Research & Consulting Group </span>
+            </div>
+            <div class="right">Apr. 2020 – Jun. 2021 </div>
+          </div>
+          <ul style="color: var(--muted); font-size: 0.93rem; margin-top: 8px;">
+            <li>Led strategy and commercial analysis for telecom operators and public sector clients.</li>
+            <li> Co-developed a 5G spectrum pricing and valuation model enabling a 15 percent increase in planned network upgrade investment.</li>
+            <li>Led RFP response development and pricing strategy for a nationwide IoT platform rollout.</li>
+          </ul>
+        </div>
+        
+        <div class="role">
+          <div class="roleTop">
+            <div class="left">
+              <strong>Visiting Researcher</strong>
+              <span>University of British Columbia </span>
+            </div>
+            <div class="right">Jan. 2019 – Aug. 2019 </div>
+          </div>
+          <ul style="color: var(--muted); font-size: 0.93rem; margin-top: 8px;">
+            <li>Conducted analytical modelling of non-terrestrial backhaul and fronthaul links for 5G networks, supporting feasibility assessment of alternative network architectures.</li>
+          </ul>
+        </div>
+
       </div>
     </section>
 
