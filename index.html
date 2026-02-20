@@ -3,205 +3,353 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Your Name | Personal Website</title>
-  <meta name="description" content="Personal website of Your Name. Research, projects, and contact information." />
+  <title>Hossein Safi | Telecoms Strategy & Policy</title>
+  <meta name="description" content="Hossein Safi — Consultant and telecoms specialist (TMT). Strategy, regulatory, and market analysis across mobile, IoT, and digital infrastructure." />
 
   <style>
-    :root {
-      --bg: #0f172a;
-      --card: #111827;
+    :root{
+      --bg: #0b1220;
+      --panel: rgba(17, 24, 39, 0.72);
+      --panelSolid: #0f172a;
       --text: #e5e7eb;
       --muted: #9ca3af;
       --accent: #38bdf8;
-      --border: #1f2933;
+      --border: rgba(148, 163, 184, 0.18);
+      --shadow: 0 12px 30px rgba(0,0,0,0.35);
+      --radius: 16px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-    }
-
-    body {
-      background: linear-gradient(180deg, #020617 0%, #020617 30%, #020617 100%);
+    *{ box-sizing:border-box; margin:0; padding:0; font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; }
+    body{
       color: var(--text);
+      background:
+        radial-gradient(1200px 500px at 20% -10%, rgba(56,189,248,0.18), transparent 60%),
+        radial-gradient(1000px 600px at 100% 10%, rgba(99,102,241,0.18), transparent 55%),
+        linear-gradient(180deg, #020617, var(--bg));
       line-height: 1.6;
     }
 
-    .container {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 48px 20px 80px;
-    }
+    a{ color: var(--accent); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
 
-    header {
-      display: grid;
-      grid-template-columns: 120px 1fr;
+    .container{ max-width: 1040px; margin: 0 auto; padding: 44px 18px 78px; }
+
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+      padding: 10px 12px; border: 1px solid var(--border); border-radius: 999px;
+      background: rgba(2,6,23,0.35);
+      backdrop-filter: blur(10px);
+      margin-bottom: 22px;
+    }
+    .topbar .pill{
+      display:flex; gap:10px; align-items:center; color: var(--muted); font-size: 0.92rem;
+      padding-left: 6px;
+    }
+    .topbar .nav{
+      display:flex; flex-wrap:wrap; gap: 10px; justify-content:flex-end;
+    }
+    .topbar .nav a{
+      color: var(--text);
+      border: 1px solid var(--border);
+      background: rgba(15,23,42,0.65);
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+    }
+    .topbar .nav a:hover{ text-decoration:none; border-color: rgba(56,189,248,0.5); }
+
+    header.hero{
+      display:grid;
+      grid-template-columns: 140px 1fr;
       gap: 24px;
-      align-items: center;
-      margin-bottom: 48px;
+      align-items:center;
+      padding: 26px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+      margin-bottom: 18px;
     }
-
-    .avatar {
-      width: 120px;
-      height: 120px;
-      border-radius: 12px;
+    .avatar{
+      width: 140px; height: 140px;
+      border-radius: 16px;
       object-fit: cover;
       border: 1px solid var(--border);
       background: #020617;
     }
-
-    h1 {
-      font-size: 2rem;
-      font-weight: 700;
+    .hero h1{
+      font-size: 2.05rem;
       letter-spacing: -0.02em;
+      line-height: 1.2;
       margin-bottom: 6px;
     }
-
-    .subtitle {
+    .hero .title{
       color: var(--muted);
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      font-size: 1.02rem;
     }
 
-    .links a {
-      display: inline-block;
-      margin-right: 14px;
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 500;
+    .meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px 14px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 14px;
     }
+    .meta span{ display:inline-flex; align-items:center; gap:8px; }
+    .dot{ width:6px; height:6px; border-radius:50%; background: rgba(56,189,248,0.9); display:inline-block; }
 
-    .links a:hover {
-      text-decoration: underline;
+    .ctaRow{
+      display:flex; flex-wrap:wrap; gap: 10px;
+      margin-top: 6px;
     }
-
-    section {
-      background: rgba(17, 24, 39, 0.6);
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 12px;
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 24px 24px 28px;
-      margin-bottom: 24px;
-      backdrop-filter: blur(6px);
+      background: rgba(2,6,23,0.35);
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .btn.primary{
+      background: rgba(56,189,248,0.14);
+      border-color: rgba(56,189,248,0.35);
+      color: var(--text);
+    }
+    .btn:hover{ text-decoration:none; border-color: rgba(56,189,248,0.6); }
+
+    section{
+      margin-top: 18px;
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--panel);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+      backdrop-filter: blur(10px);
     }
 
-    section h2 {
-      font-size: 1.2rem;
+    h2{
+      font-size: 1.15rem;
       margin-bottom: 12px;
       letter-spacing: -0.01em;
     }
+    p{ color: var(--text); }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 14px;
     }
 
-    .item {
-      background: #020617;
+    .card{
+      background: rgba(2,6,23,0.38);
       border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 14px 16px;
+      border-radius: 14px;
+      padding: 14px 14px 16px;
     }
-
-    .item h3 {
-      font-size: 0.95rem;
+    .card h3{
+      font-size: 0.98rem;
       margin-bottom: 6px;
-      font-weight: 600;
     }
+    .card p, .card li{ color: var(--muted); font-size: 0.93rem; }
 
-    .item p {
-      font-size: 0.9rem;
+    ul{ padding-left: 18px; }
+    li{ margin: 6px 0; }
+
+    .timeline{ display:flex; flex-direction:column; gap: 12px; }
+    .role{
+      padding: 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(2,6,23,0.38);
+    }
+    .roleTop{
+      display:flex; flex-wrap:wrap;
+      align-items:baseline;
+      justify-content:space-between;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .roleTop .left{
+      display:flex; flex-direction:column; gap: 2px;
+    }
+    .roleTop .left strong{ font-size: 1rem; }
+    .roleTop .left span{ color: var(--muted); font-size: 0.92rem; }
+    .roleTop .right{
       color: var(--muted);
+      font-size: 0.92rem;
+      white-space: nowrap;
     }
 
-    footer {
-      text-align: center;
+    .tagRow{
+      display:flex; flex-wrap:wrap; gap: 8px; margin-top: 10px;
+    }
+    .tag{
+      font-size: 0.82rem;
       color: var(--muted);
-      font-size: 0.85rem;
-      margin-top: 40px;
+      border: 1px solid var(--border);
+      background: rgba(15,23,42,0.6);
+      padding: 5px 9px;
+      border-radius: 999px;
     }
 
-    @media (max-width: 640px) {
-      header {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
+    footer{
+      text-align:center;
+      color: var(--muted);
+      font-size: 0.86rem;
+      margin-top: 26px;
+      padding-top: 10px;
+    }
 
-      .avatar {
-        margin: 0 auto 12px;
-      }
+    @media (max-width: 720px){
+      header.hero{ grid-template-columns: 1fr; text-align:center; }
+      .avatar{ margin: 0 auto; }
+      .meta{ justify-content:center; }
+      .ctaRow{ justify-content:center; }
+      .topbar{ flex-direction:column; align-items:stretch; border-radius: 18px; }
+      .topbar .nav{ justify-content:center; }
+      .topbar .pill{ justify-content:center; }
     }
   </style>
 </head>
+
 <body>
   <div class="container">
-    <header>
-      <img class="avatar" src="photo.jpg" alt="Your Name" />
+
+    <div class="topbar">
+      <div class="pill">
+        <span class="dot"></span>
+        <span>Telecoms Strategy • Regulatory & Policy • Techno-economics</span>
+      </div>
+      <div class="nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#engagements">Engagements</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+
+    <header class="hero">
+      <img class="avatar" src="assets/photo.jpg" alt="Hossein Safi" />
       <div>
-        <h1>Your Name</h1>
-        <p class="subtitle">Your role or short professional description</p>
-        <div class="links">
-          <a href="mailto:youremail@example.com">Email</a>
-          <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener">X</a>
-          <a href="https://scholar.google.com" target="_blank" rel="noopener">Google Scholar</a>
+        <h1>Hossein Safi</h1>
+        <div class="title">Consultant and telecoms specialist (TMT) • PhD in Telecommunications Engineering</div>
+
+        <div class="meta">
+          <span><span class="dot"></span> Cambridge, UK</span>
+          <span><span class="dot"></span> UK Global Talent (no sponsorship required)</span>
+        </div>
+
+        <div class="ctaRow">
+          <a class="btn primary" href="mailto:safi.hossein01@gmail.com">Email</a>
+          <a class="btn" href="tel:+447401524752">Call</a>
+          <a class="btn" href="https://www.linkedin.com/in/hossein-safi-66674680/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="https://scholar.google.com/citations?user=G-j2JCAAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
         </div>
       </div>
     </header>
 
-    <section>
-      <h2>About</h2>
+    <section id="about">
+      <h2>Professional Summary</h2>
       <p>
-        Write a concise professional bio here. Briefly describe your background,
-        current role, and main interests. Keep this to 3 to 5 lines for clarity.
+        Consultant and telecoms specialist with 10+ years of experience delivering strategy, regulatory, and market
+        analysis across the TMT sector. Experienced in advising operators, regulators, and public sector clients on
+        digital infrastructure, spectrum policy, and emerging connectivity, combining strong quantitative analysis
+        with executive-level communication.
       </p>
     </section>
 
-    <section>
-      <h2>Projects or Work</h2>
+    <section id="skills">
+      <h2>Core Skills</h2>
       <div class="grid">
-        <div class="item">
-          <h3>Project Title</h3>
-          <p>One sentence description of the project or outcome.</p>
+        <div class="card">
+          <h3>Strategy, Commercial & Market Analysis</h3>
+          <ul>
+            <li>Market sizing and demand forecasting (telecoms, digital infrastructure, IoT)</li>
+            <li>Go-to-market strategy and competitive analysis</li>
+            <li>Business cases and investment trade-off models</li>
+          </ul>
         </div>
-        <div class="item">
-          <h3>Project Title</h3>
-          <p>One sentence description of the project or outcome.</p>
+        <div class="card">
+          <h3>Regulatory & Policy Advisory</h3>
+          <ul>
+            <li>Spectrum licensing and valuation</li>
+            <li>5G and IoT regulatory frameworks</li>
+            <li>Licensing and compliance advisory</li>
+          </ul>
         </div>
-        <div class="item">
-          <h3>Project Title</h3>
-          <p>One sentence description of the project or outcome.</p>
+        <div class="card">
+          <h3>Quantitative & Techno-economic Modelling</h3>
+          <ul>
+            <li>Scenario and cost-benefit analysis</li>
+            <li>Benchmarking network technologies</li>
+            <li>End-to-end performance and cost models</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section>
-      <h2>Publications or Writing</h2>
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="timeline">
+        <!-- Roles... (same as before) -->
+      </div>
+    </section>
+
+    <section id="engagements">
+      <h2>Selected Strategy and Advisory Engagements</h2>
       <div class="grid">
-        <div class="item">
-          <h3>Paper or Article Title</h3>
-          <p>Journal or platform, year. Short context or link.</p>
+        <div class="card">
+          <h3>REASON (UKRI 6G Flagship Project)</h3>
+          <ul>
+            <li>Led development of multi-access frameworks.</li>
+            <li>Governance and strategic deliverables for consortium partners.</li>
+          </ul>
         </div>
-        <div class="item">
-          <h3>Paper or Article Title</h3>
-          <p>Journal or platform, year. Short context or link.</p>
+        <div class="card">
+          <h3>TITAN (EPSRC Flagship Project)</h3>
+          <ul>
+            <li>Interim project management and coordination.</li>
+            <li>Industry-academic strategy workshops.</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section>
+    <section id="contact">
       <h2>Contact</h2>
-      <p>
-        Email: youremail@example.com <br />
-        Location: City, Country
-      </p>
+      <div class="grid">
+        <div class="card">
+          <h3>Details</h3>
+          <p>
+            Cambridge, UK<br />
+            <a href="mailto:safi.hossein01@gmail.com">safi.hossein01@gmail.com</a><br />
+            <a href="tel:+447401524752">+44 7401 524752</a>
+          </p>
+        </div>
+        <div class="card">
+          <h3>Links</h3>
+          <p>
+            <a href="https://www.linkedin.com/in/hossein-safi-66674680/" target="_blank" rel="noopener">LinkedIn</a><br />
+            <a href="https://scholar.google.com/citations?user=G-j2JCAAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+          </p>
+        </div>
+      </div>
     </section>
 
     <footer>
-      © 2026 Your Name. Hosted on GitHub Pages.
+      © <span id="y"></span> Hossein Safi • Hosted on GitHub Pages
     </footer>
   </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
